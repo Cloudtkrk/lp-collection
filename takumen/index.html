@@ -313,6 +313,13 @@
     </button>
   </section>
 
+  <!-- ============ PRODUCT DETAIL CTA ============ -->
+  <section style="padding:34px 22px 0;">
+    <a data-product href="#" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:16px; background:#251D1A; border:1px solid #5A4528; color:#E0B84C; text-decoration:none; border-radius:13px; font-size:15px; font-weight:900; box-shadow:0 6px 20px rgba(0,0,0,.25);">
+      <i class="ti ti-brand-google-drive" style="font-size:19px;"></i>商品を詳しく知る
+    </a>
+  </section>
+
   <!-- ============ ASSET DOWNLOAD ============ -->
   <section style="padding:34px 22px;">
     <div style="position:relative; overflow:hidden; background:linear-gradient(150deg,#3A2A18 0%,#251D1A 70%); border:1px solid #5A4528; border-radius:18px; padding:26px 22px;">
@@ -354,6 +361,7 @@
     tiktokUrl: "https://affiliate.tiktok.com/api/v1/share/AKu083uG23JX",
     assetUrl: "https://drive.google.com/drive/folders/1NnfbPLofHkhBxaUDRLGn7yIVs6aMEmwy?usp=sharing",
     contactUrl: "https://line.me/R/ti/p/@314uaudq?oat_content=url&ts=06192309",
+    productUrl: "https://drive.google.com/drive/folders/1NnfbPLofHkhBxaUDRLGn7yIVs6aMEmwy",
   };
 
   /* ===== データ ===== */
@@ -494,6 +502,14 @@
           ]),
         ]));
       });
+      // 各セット詳細の末尾に「もっと詳細を見る」（商品ページ/Driveへ）
+      details.appendChild(el("a", {
+        href: CONFIG.productUrl, target:"_blank", rel:"noopener",
+        style:`display:flex; align-items:center; justify-content:center; gap:6px; margin-top:4px; padding:9px; background:#3A2A18; border:1px solid #5A4528; border-radius:9px; text-decoration:none; font-size:12px; font-weight:700; color:#E0B84C;`
+      }, [
+        el("i", { class:"ti ti-external-link", style:"font-size:14px;" }),
+        document.createTextNode("もっと詳細を見る"),
+      ]));
 
       const toggle = el("button", { style:"display:flex; align-items:center; justify-content:center; gap:5px; width:100%; margin-top:14px; padding:9px; background:transparent; border:1px solid #3A2A24; border-radius:9px; font-size:12px; font-weight:700; color:#A89B92; cursor:pointer;" }, [
         el("span", null, "掲載店舗の詳細を見る"),
@@ -627,6 +643,7 @@
   document.querySelectorAll("[data-tiktok]").forEach(a => { a.href = CONFIG.tiktokUrl; });
   document.querySelectorAll("[data-contact]").forEach(a => { a.href = CONFIG.contactUrl; });
   document.querySelectorAll("[data-asset]").forEach(a => { a.href = CONFIG.assetUrl; });
+  document.querySelectorAll("[data-product]").forEach(a => { a.href = CONFIG.productUrl; });
 })();
 </script>
 </body>
