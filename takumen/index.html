@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* /takumen のように末尾スラッシュ無しで配信された場合でも、
+     ./assets/... をこのLPフォルダ配下へ正しく解決させる（フォルダ名変更にも追従） */
+  (function () {
+    var p = location.pathname;
+    if (!/\/$/.test(p)) {
+      var seg = p.substring(p.lastIndexOf('/') + 1);
+      if (seg && seg.indexOf('.') === -1) document.write('<base href="' + seg + '/">');
+    }
+  })();
+</script>
 <title>宅麺.com｜TikTok Shop クリエイター向けオリエン</title>
 <meta name="description" content="行列店の味を、おうちで。宅麺.com TikTok Shop クリエイター向けオリエンLP。">
 
@@ -205,7 +216,7 @@
       <span style="width:8px; height:8px; border-radius:50%; background:#F03E3E; box-shadow:0 0 8px #F03E3E;"></span>
       <span style="font-size:12px; font-weight:900; color:#F03E3E; letter-spacing:.06em;">ライブ配信での訴求</span>
     </div>
-    <h2 style="font-size:22px; font-weight:900; line-height:1.4; margin-bottom:6px;">熱量と、<br>お得感で売り切る。</h2>
+    <h2 style="font-size:22px; font-weight:900; line-height:1.4; margin-bottom:6px;">熱量と、<br>ライブだけのお得感で売り切る。</h2>
     <p style="font-size:12px; color:#C0908A; margin-bottom:20px;">タップでトーク台本をコピーできます</p>
 
     <!-- 売れる2つの軸 -->
@@ -224,7 +235,7 @@
         <span style="flex:none; width:26px; height:26px; border-radius:8px; background:#D62828; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900;">2</span>
         <div>
           <p style="font-size:14px; font-weight:900; color:#F5EFE8; line-height:1.4; margin-bottom:6px;">販促の工夫（クーポン併用）</p>
-          <p style="font-size:12px; color:#E8C9C5; line-height:1.65;">4,000円台後半はTikTok Shop食品では高めの部類。<b style="color:#F5EFE8;">TikTokクーポン×タイムセール</b>と必ず併用を。<b style="color:#E0B84C;">6/23開始のトクトクセール</b>、現在<b style="color:#E0B84C;">800円OFFクーポン</b>を併用すれば、<b style="color:#F5EFE8;">有名店の味が1食約1,200円</b>に。最近の店舗ラーメンは1,200〜1,500円、Uberなら1,000円台後半。それより断然お得、と伝えると刺さります。</p>
+          <p style="font-size:12px; color:#E8C9C5; line-height:1.65;">4,000円台後半はTikTok Shopの食品では<b style="color:#F5EFE8;">安いとは言えない部類</b>。<b style="color:#F5EFE8;">TikTokクーポン×タイムセール</b>と必ず併用を。<b style="color:#E0B84C;">TikTok発行のクーポン</b>を併用すれば、<b style="color:#F5EFE8;">有名店の味が1食約1,300円程度</b>で購入できることが多い。最近の店舗ラーメンは1,200〜1,500円、Uberなら1,000円台後半。それより断然お得、と伝えると刺さります。</p>
         </div>
       </div>
 
@@ -240,6 +251,8 @@
       <div style="display:flex; flex-direction:column; gap:9px;">
         <div style="display:flex; gap:8px; align-items:flex-start;"><i class="ti ti-pot" style="font-size:16px; color:#F03E3E; margin-top:1px;"></i><p style="font-size:12px; color:#E8C9C5; line-height:1.5;"><b style="color:#F5EFE8;">事前仕込み</b>：お湯・丼・カメラを開始前にスタンバイ</p></div>
         <div style="display:flex; gap:8px; align-items:flex-start;"><i class="ti ti-alarm" style="font-size:16px; color:#F03E3E; margin-top:1px;"></i><p style="font-size:12px; color:#E8C9C5; line-height:1.5;"><b style="color:#F5EFE8;">緊急性の演出</b>：「残り◯セット」と在庫残数で背中を押す</p></div>
+        <div style="display:flex; gap:8px; align-items:flex-start;"><i class="ti ti-device-tv" style="font-size:16px; color:#F03E3E; margin-top:1px;"></i><p style="font-size:12px; color:#E8C9C5; line-height:1.5;"><b style="color:#F5EFE8;">画面上の演出</b>：早く食べ過ぎない。調理工程や説明書をうまく活用して訴求。</p></div>
+        <div style="display:flex; gap:8px; align-items:flex-start;"><i class="ti ti-alert-circle" style="font-size:16px; color:#F03E3E; margin-top:1px;"></i><p style="font-size:12px; color:#E8C9C5; line-height:1.5;"><b style="color:#F5EFE8;">よくある失敗</b>：食べることに集中してしまい、訴求が出来ていないケース。食前食後からタイムセールを活用して効果的に訴求を行う。</p></div>
       </div>
     </div>
   </section>
@@ -365,7 +378,7 @@
   ];
 
   const reasons = [
-    { icon:"ti ti-snowflake", title:"店舗の味をそのまま冷凍", sub:"できたてを急速冷凍。名店の一杯を再現" },
+    { icon:"ti ti-snowflake", title:"全国各地の人気ラーメン店の味をそのまま冷凍", sub:"できたてを急速冷凍。名店の一杯をご自宅で再現" },
     { icon:"ti ti-droplet-filled", title:"ストレートスープへのこだわり", sub:"濃縮なし。お店と同じ味わいをお届け" },
     { icon:"ti ti-file-description", title:"一食一枚の作り方説明書つき", sub:"誰でも失敗しない、丁寧な調理ガイド" },
   ];
@@ -384,7 +397,7 @@
     { id:"l4", icon:"ti ti-message-circle", title:"参加型コメント", script:"コメントで気になる味を教えて！リクエスト多い順に次これ作ります。" },
   ];
 
-  const axesScript = "宅麺は全国の有名店が実際に作った一杯をそのまま急速冷凍してるので、有名店監修や乾麺の商品とは全くの別物、ラーメンECサイトNo.1なんです。単品だと送料込みで1食2,500〜2,800円しますが、今回はオープン記念で送料無料セット！さらにTikTokのトクトクセールと800円OFFクーポンを併用すれば、有名店の味が1食約1,200円。最近の店舗ラーメンは1,200〜1,500円、Uberなら1,000円台後半なので、これはかなりお得です！";
+  const axesScript = "宅麺は全国の有名店が実際に作った一杯をそのまま急速冷凍してるので、有名店監修や乾麺の商品とは全くの別物、ラーメンECサイトNo.1なんです。単品だと送料込みで1食2,500〜2,800円しますが、今回はオープン記念で送料無料セット！さらにTikTok発行のクーポンを併用すれば、有名店の味が1食約1,300円程度で購入できることが多いです。最近の店舗ラーメンは1,200〜1,500円、Uberなら1,000円台後半なので、これはかなりお得です！";
 
   const scenes = [
     { icon:"ti ti-moon", label:"夜食" },
