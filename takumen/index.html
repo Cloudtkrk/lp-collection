@@ -336,8 +336,8 @@
   <footer style="padding:36px 22px 44px; background:#13100E; border-top:1px solid #2A201C; text-align:center;">
     <img src="./assets/logo.png" alt="宅麺.com" style="display:inline-block; width:140px; height:auto; margin-bottom:10px;">
     <p style="font-size:12px; color:#8A7F76; margin-bottom:20px;">行列店の味を、おうちで。</p>
-    <a data-tiktok href="#" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:13px 24px; background:#251D1A; border:1px solid #3A2A24; color:#F5EFE8; text-decoration:none; border-radius:100px; font-size:13px; font-weight:700; margin-bottom:22px;">
-      <i class="ti ti-mail" style="font-size:16px; color:#C9A227;"></i>お問い合わせはこちら
+    <a data-contact href="#" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:13px 24px; background:#251D1A; border:1px solid #3A2A24; color:#F5EFE8; text-decoration:none; border-radius:100px; font-size:13px; font-weight:700; margin-bottom:22px;">
+      <i class="ti ti-brand-line" style="font-size:16px; color:#06C755;"></i>お問い合わせはこちら
     </a>
     <p style="font-size:11px; color:#5A4F48; line-height:1.6;">© 宅麺.com / クリエイター向けオリエン資料</p>
   </footer>
@@ -353,6 +353,7 @@
     price: "4,980円",
     tiktokUrl: "https://affiliate.tiktok.com/api/v1/share/AKu083uG23JX",
     assetUrl: "https://drive.google.com/drive/folders/1NnfbPLofHkhBxaUDRLGn7yIVs6aMEmwy?usp=sharing",
+    contactUrl: "https://line.me/R/ti/p/@314uaudq?oat_content=url&ts=06192309",
   };
 
   /* ===== データ ===== */
@@ -624,6 +625,7 @@
   /* ===== 差し替え値の反映 ===== */
   $("[data-price]").textContent = CONFIG.price;
   document.querySelectorAll("[data-tiktok]").forEach(a => { a.href = CONFIG.tiktokUrl; });
+  document.querySelectorAll("[data-contact]").forEach(a => { a.href = CONFIG.contactUrl; });
   document.querySelectorAll("[data-asset]").forEach(a => { a.href = CONFIG.assetUrl; });
 })();
 </script>
