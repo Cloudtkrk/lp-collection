@@ -102,7 +102,6 @@
       </div>
       <div style="display:flex; justify-content:center; gap:8px; margin-top:12px;">
         <span style="background:var(--pink); color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:100px;">数量公式</span>
-        <span style="background:#fff; color:var(--pink); border:1px solid var(--pink-bd); font-size:11px; font-weight:700; padding:5px 12px; border-radius:100px;">クーポン適用後</span>
       </div>
     </div>
 
@@ -152,13 +151,13 @@
     <div style="background:var(--navy); border-radius:20px; margin:28px 16px; padding:26px 20px 24px; color:#EAEEF6;">
       <div style="display:flex; align-items:center; gap:9px; margin-bottom:22px;">
         <i class="ti ti-player-play-filled" style="font-size:20px; color:var(--pink);"></i>
-        <h2 style="font-size:19px; font-weight:900; color:#fff;">動画の作り方</h2>
+        <h2 style="font-size:19px; font-weight:900; color:#fff;">動画訴求のポイント</h2>
       </div>
       <div data-steps style="display:flex; flex-direction:column; gap:0;"></div>
 
       <!-- フック例 -->
       <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--navy-bd);">
-        <p style="font-size:12px; font-weight:900; color:#AEB8CC; letter-spacing:.08em; margin-bottom:13px;">フック例</p>
+        <span style="display:inline-block; background:var(--pink); color:#fff; font-size:11px; font-weight:900; letter-spacing:.04em; padding:4px 13px; border-radius:100px; margin-bottom:13px;">フック例</span>
         <div data-hooks style="display:flex; flex-direction:column; gap:10px;"></div>
       </div>
 
@@ -223,7 +222,7 @@
   const points = [
     { kind:"shield", stat:"99.9%以上", note:"※捕獲率半年目まで", sub:"ダニ捕獲に特化" },
     { kind:"box",    stat:"累計2,700万個", note:"※2024年11月時点", sub:"シリーズ販売実績" },
-    { kind:"crown",  stat:"売上第1位", note:"※ダニ対策マット部門で", sub:"各モールを受賞" },
+    { kind:"crown",  stat:"売上第1位", note:"※ダニ対策マット部門で", sub:"Amazon／楽天／Yahoo! 各モール売上第1位" },
     { kind:"flag",   stat:"日本製で安心", note:"化学成分不使用設計", sub:"子ども・ペットが使っても" },
   ];
 
@@ -234,10 +233,10 @@
   ];
 
   const steps = [
-    { no:"1", accent:"var(--pink)", time:"0〜2秒",   title:"フック",   icon:"ti ti-gift",       desc:"ダニの不安 or 実績でつかむ" },
-    { no:"2", accent:"var(--blue)", time:"2〜8秒",   title:"課題提示", icon:"ti ti-brain",      desc:"寝具・ソファ・梅雨〜夏の不安を言語化" },
-    { no:"3", accent:"var(--blue)", time:"8〜18秒",  title:"解決",     icon:"ti ti-chart-arrows-vertical", desc:"置くだけ・約3ヶ月・99.9%以上※ 伝える" },
-    { no:"4", accent:"var(--blue)", time:"18〜30秒", title:"CTA",      icon:"ti ti-hand-finger", desc:"今やる理由を添えて購入導線へ" },
+    { no:"1", accent:"#F5426C", time:"0〜2秒",   title:"フック",   desc:"商品をすぐ見せる。ダニの不安 or 実績でつかむ" },
+    { no:"2", accent:"#5B9BD5", time:"2〜8秒",   title:"課題提示", desc:"寝具・ソファ・梅雨〜夏の不安を言語化" },
+    { no:"3", accent:"#5B9BD5", time:"8〜18秒",  title:"解決",     desc:"置くだけ・3ヶ月・乾燥退治・99.9%以上※を伝える" },
+    { no:"4", accent:"#22D3EE", time:"18〜30秒", title:"CTA",      desc:"今やる理由を添えて購入導線へ" },
   ];
 
   const hooks = [
@@ -336,40 +335,30 @@
     });
   })();
 
-  /* ===== 動画の作り方（ステップ） ===== */
+  /* ===== 動画訴求のポイント（横並び4ステップ＋矢印） ===== */
   (function renderSteps() {
     const wrap = $("[data-steps]");
+    wrap.style.cssText = "display:flex; align-items:flex-start; justify-content:space-between;";
     steps.forEach((s, i) => {
-      const row = el("div", { style:"display:flex; gap:14px; align-items:flex-start;" }, [
-        // 左：番号＋縦線
-        el("div", { style:"flex:none; display:flex; flex-direction:column; align-items:center;" }, [
-          el("span", { style:`width:30px; height:30px; border-radius:50%; background:${s.accent}; color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900;` }, s.no),
-          i < steps.length - 1 ? el("span", { style:"width:2px; flex:1; min-height:30px; background:var(--navy-bd); margin:4px 0;" }) : null,
-        ]),
-        // 右：内容
-        el("div", { style:"flex:1; padding-bottom:18px;" }, [
-          el("div", { style:"display:flex; align-items:center; gap:8px; margin-bottom:8px;" }, [
-            el("span", { style:`font-size:12px; font-weight:900; color:${s.accent};` }, s.time),
-            el("span", { style:"font-size:15px; font-weight:900; color:#fff;" }, s.title),
-          ]),
-          el("div", { style:"display:flex; align-items:flex-start; gap:9px;" }, [
-            el("i", { class:s.icon, style:`flex:none; font-size:20px; color:${s.accent}; margin-top:1px;` }),
-            el("p", { style:"font-size:13px; font-weight:400; color:#C7CFDE; line-height:1.6;" }, s.desc),
-          ]),
-        ]),
-      ]);
-      wrap.appendChild(row);
+      wrap.appendChild(el("div", { style:"flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 2px;" }, [
+        el("span", { style:`width:26px; height:26px; border-radius:50%; background:${s.accent}; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900;` }, s.no),
+        el("p", { style:`font-size:10px; font-weight:900; color:${s.accent}; line-height:1.25; margin-top:8px;` }, s.time),
+        el("p", { style:"font-size:12px; font-weight:900; color:#fff; line-height:1.25; margin-top:2px;" }, s.title),
+        el("p", { style:"font-size:10px; font-weight:400; color:#C7CFDE; line-height:1.55; margin-top:7px;" }, s.desc),
+      ]));
+      if (i < steps.length - 1) {
+        wrap.appendChild(el("div", { style:"flex:none; align-self:flex-start; margin-top:7px; color:#8A93A6; font-size:13px; line-height:1;" }, "▶"));
+      }
     });
   })();
 
-  /* ===== フック例（吹き出し） ===== */
+  /* ===== フック例（吹き出し・3列） ===== */
   (function renderHooks() {
     const wrap = $("[data-hooks]");
+    wrap.style.cssText = "display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;";
     hooks.forEach(h => {
-      wrap.appendChild(el("div", { style:"display:flex; gap:10px; align-items:flex-start; background:var(--navy2); border:1px solid var(--navy-bd); border-radius:12px; padding:13px 14px;" }, [
-        el("i", { class:"ti ti-quote", style:"flex:none; font-size:16px; color:var(--pink); margin-top:2px;" }),
-        el("p", { style:"font-size:13px; font-weight:700; color:#E7ECF5; line-height:1.6;" }, h),
-      ]));
+      wrap.appendChild(el("div", { style:"background:#fff; border-radius:11px; padding:11px 9px; text-align:center;" },
+        el("p", { style:"font-size:10.5px; font-weight:700; color:#2A2F3A; line-height:1.55;" }, h)));
     });
   })();
 
