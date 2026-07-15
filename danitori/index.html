@@ -271,12 +271,9 @@
 
   /* ===== データ ===== */
   const features = [
-    { icon:"ti ti-rosette-discount", label:"報酬率",   value:"15%" },
-    { icon:"ti ti-player-play",       label:"成果承認", value:"30日以内" },
-    { icon:"ti ti-gift",              label:"報酬条件", value:"あり" },
-    { icon:"ti ti-tags",              label:"単価",     value:"1,729〜8,250円" },
-    { icon:"ti ti-truck",             label:"",         value:"送料無料", solo:true },
-    { icon:"ti ti-package",           label:"",         value:"海外発送可", solo:true },
+    { icon:"ti ti-rosette-discount", label:"報酬率", value:"15%" },
+    { icon:"ti ti-tags",             label:"単価",   value:"1,729〜8,250円" },
+    { icon:"ti ti-truck",            label:"",       value:"送料無料", solo:true },
   ];
 
   const usp = [
@@ -397,12 +394,10 @@
     const wrap = $("[data-features]");
     features.forEach(f => {
       const inner = f.solo
-        ? [ el("i", { class:f.icon, style:"font-size:26px; color:var(--pink);" }),
-            el("p", { style:"font-size:14px; font-weight:900; color:var(--ink); margin-top:8px; line-height:1.3;" }, f.value) ]
-        : [ el("i", { class:f.icon, style:"font-size:24px; color:var(--pink);" }),
-            el("p", { style:"font-size:11px; font-weight:700; color:var(--sub); margin-top:7px;" }, f.label),
-            el("p", { style:"font-size:14px; font-weight:900; color:var(--ink); margin-top:2px; line-height:1.25;" }, f.value) ];
-      wrap.appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:16px 8px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:104px;" }, inner));
+        ? [ el("p", { style:"font-size:16px; font-weight:900; color:var(--ink); line-height:1.3;" }, f.value) ]
+        : [ el("p", { style:"font-size:12px; font-weight:700; color:var(--sub);" }, f.label),
+            el("p", { style:"font-size:12.5px; font-weight:900; color:var(--ink); margin-top:5px; line-height:1.3; white-space:nowrap;" }, f.value) ];
+      wrap.appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:20px 6px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:88px;" }, inner));
     });
   })();
 
