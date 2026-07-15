@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* /danitori のように末尾スラッシュ無しで配信された場合でも、
+     ./assets/... をこのLPフォルダ配下へ正しく解決させる（フォルダ名変更にも追従） */
+  (function () {
+    var p = location.pathname;
+    if (!/\/$/.test(p)) {
+      var seg = p.substring(p.lastIndexOf('/') + 1);
+      if (seg && seg.indexOf('.') === -1) document.write('<base href="' + seg + '/">');
+    }
+  })();
+</script>
+<title>ダニ捕りロボ 本体（レギュラー1個）｜クリエイター向け案件オリエン</title>
+<meta name="description" content="置くだけでダニを誘引・捕獲。ダニ捕りロボ 本体のクリエイター向け案件オリエンLP。報酬率・素材・動画の作り方まとめ。">
+
+<!-- OGP -->
+<meta property="og:title" content="ダニ捕りロボ 本体｜クリエイター向け案件オリエン">
+<meta property="og:description" content="置くだけでダニ対策。報酬率15%・素材・台本の型をまとめました。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/product.png">
+
+<link rel="icon" type="image/png" href="./assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
+
+<style>
+  :root{
+    --pink:#F5426C; --pink-d:#E12F5C; --pink-bg:#FFEDF2; --pink-bd:#F7C3D3;
+    --blue:#2E7DF6; --blue-bg:#EAF2FF;
+    --ink:#20242E; --sub:#8A8F9A; --line:#ECECEC; --cream:#FBF7F3;
+    --navy:#141C2E; --navy2:#1E2740; --navy-bd:#2C3752;
+    --green:#06C755;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #EDEDED; }
+  ::selection { background: var(--pink); color: #fff; }
+  button, a { font-family: inherit; }
+  .app {
+    max-width: 430px; margin: 0 auto; background: #fff; color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif; min-height: 100vh;
+    overflow: hidden; position: relative;
+  }
+  /* セクション見出し */
+  .sec-h { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .sec-h::before { content:""; width:5px; height:20px; border-radius:3px; background:var(--pink); }
+  .sec-h h2 { font-size:20px; font-weight:900; letter-spacing:.01em; }
+  /* 画像プレースホルダ（assets が無い場合の見た目） */
+  .imgwrap { position:relative; width:100%; overflow:hidden; }
+  .imgwrap > img { display:block; width:100%; height:100%; object-fit:cover; }
+  .ph { position:absolute; inset:0; display:none; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+        background:linear-gradient(135deg,#FBF3F6 0%,#F4F6FA 100%); color:#B9A6AE; }
+  .ph i { font-size:30px; }
+  .ph span { font-size:11px; font-weight:700; letter-spacing:.04em; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ HERO ============ -->
+  <section style="position:relative; padding:0 0 26px; background:linear-gradient(180deg,#F6EEE7 0%,#FCF7F2 46%,#fff 100%);">
+
+    <!-- 商品ビジュアル -->
+    <div style="position:relative; padding:22px 20px 8px;">
+      <span style="position:absolute; top:0; left:0; z-index:3; background:var(--pink); color:#fff; font-size:11px; font-weight:900; letter-spacing:.06em; padding:6px 16px 6px 14px; border-radius:0 0 12px 0; box-shadow:0 3px 8px rgba(245,66,108,.28);">成果報酬</span>
+      <div class="imgwrap" style="aspect-ratio:16/10; border-radius:16px; box-shadow:0 8px 24px rgba(120,90,70,.14);">
+        <img src="./assets/hero.jpg" alt="ダニ捕りロボ 本体 レギュラーサイズ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="ph" style="background:linear-gradient(135deg,#F3E9DF 0%,#EFEAE4 100%); color:#C7B49F;">
+          <i class="ti ti-photo"></i><span>商品ビジュアル（hero.jpg）</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- タイトル -->
+    <div style="padding:14px 20px 0;">
+      <h1 style="font-size:26px; font-weight:900; line-height:1.28; letter-spacing:.01em;">ダニ捕りロボ 本体</h1>
+      <p style="font-size:15px; font-weight:700; color:#4A4F5A; margin-top:2px;">（レギュラー 1個）</p>
+      <p style="font-size:11px; font-weight:500; color:var(--sub); margin-top:8px; line-height:1.5;">設置場所：ベッド／寝具周り／ソファ／畳／屋内</p>
+    </div>
+
+    <!-- 報酬（通常→クーポン適用後） -->
+    <div style="padding:18px 20px 0;">
+      <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div style="background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px 12px 12px; text-align:center;">
+          <p style="font-size:12px; font-weight:700; color:#7A808C; margin-bottom:4px;">通常</p>
+          <p style="font-size:15px; font-weight:700; color:var(--ink); line-height:1;"><span style="font-size:34px; font-weight:900;">10</span>%</p>
+        </div>
+        <div style="background:var(--pink-bg); border:1.5px solid var(--pink-bd); border-radius:14px; padding:10px 12px 12px; text-align:center;">
+          <p style="font-size:13px; font-weight:900; color:var(--pink); margin-bottom:2px;">+5%</p>
+          <p style="font-size:16px; font-weight:700; color:var(--pink); line-height:1;"><span style="font-size:40px; font-weight:900;">15</span>%</p>
+        </div>
+        <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:2; width:30px; height:30px; border-radius:50%; background:#fff; border:1.5px solid var(--pink-bd); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,.08);">
+          <i class="ti ti-chevron-right" style="font-size:18px; color:var(--pink); font-weight:900;"></i>
+        </span>
+      </div>
+      <div style="display:flex; justify-content:center; gap:8px; margin-top:12px;">
+        <span style="background:var(--pink); color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:100px;">数量公式</span>
+        <span style="background:#fff; color:var(--pink); border:1px solid var(--pink-bd); font-size:11px; font-weight:700; padding:5px 12px; border-radius:100px;">クーポン適用後</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="padding:20px 20px 0;">
+      <a data-join href="#" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:18px; background:var(--pink); color:#fff; text-decoration:none; border-radius:14px; font-size:17px; font-weight:900; letter-spacing:.02em; box-shadow:0 8px 22px rgba(245,66,108,.34);">
+        この案件に参加する
+        <span style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.22); display:flex; align-items:center; justify-content:center;"><i class="ti ti-arrow-right" style="font-size:16px;"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 案件特徴 ============ -->
+  <section style="padding:30px 20px 34px;">
+    <div class="sec-h"><h2>案件特徴</h2></div>
+    <div data-features style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:11px;"></div>
+  </section>
+
+  <!-- ============ 商品紹介 ============ -->
+  <section style="padding:30px 20px 34px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2>商品紹介</h2></div>
+    <div class="imgwrap" style="aspect-ratio:16/11; border-radius:14px; margin-bottom:16px; box-shadow:0 6px 18px rgba(120,90,70,.12);">
+      <img src="./assets/product.jpg" alt="ナイトテーブルに置いたダニ捕りロボ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph" style="background:linear-gradient(135deg,#F0E7DD 0%,#ECE7E1 100%); color:#C7B49F;">
+        <i class="ti ti-bed"></i><span>使用イメージ（product.jpg）</span>
+      </div>
+    </div>
+    <p style="font-size:15px; font-weight:700; line-height:1.7; margin-bottom:6px;">置くだけでダニを誘引・捕獲<span style="font-size:11px; vertical-align:super;">※</span>。しっかり捕獲するダニ対策アイテム。</p>
+    <p style="font-size:13px; font-weight:400; color:#5A606C; line-height:1.85; margin-bottom:18px;">化学成分を使わない安心設計で、お子さまやペットがいるご家庭にも安心。</p>
+    <div data-usp style="display:flex; flex-direction:column; gap:11px;"></div>
+  </section>
+
+  <!-- ============ 売れるポイント ============ -->
+  <section style="padding:30px 20px 34px;">
+    <div class="sec-h"><h2>売れるポイント</h2></div>
+    <div data-points style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"></div>
+  </section>
+
+  <!-- ============ ペルソナターゲット ============ -->
+  <section style="padding:30px 20px 34px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2>ペルソナターゲット</h2></div>
+    <div data-persona style="display:flex; flex-direction:column; gap:12px;"></div>
+  </section>
+
+  <!-- ============ 動画の作り方（ダーク） ============ -->
+  <section style="padding:0;">
+    <div style="background:var(--navy); border-radius:20px; margin:28px 16px; padding:26px 20px 24px; color:#EAEEF6;">
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:22px;">
+        <i class="ti ti-player-play-filled" style="font-size:20px; color:var(--pink);"></i>
+        <h2 style="font-size:19px; font-weight:900; color:#fff;">動画の作り方</h2>
+      </div>
+      <div data-steps style="display:flex; flex-direction:column; gap:0;"></div>
+
+      <!-- フック例 -->
+      <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--navy-bd);">
+        <p style="font-size:12px; font-weight:900; color:#AEB8CC; letter-spacing:.08em; margin-bottom:13px;">フック例</p>
+        <div data-hooks style="display:flex; flex-direction:column; gap:10px;"></div>
+      </div>
+
+      <p style="font-size:11px; color:#8B96AD; line-height:1.7; margin-top:18px;">※左下はショップボタン用に空ける ／ 1カット約2秒 ／ ナレーションありが◎</p>
+    </div>
+  </section>
+
+  <!-- ============ 使用できる素材 ============ -->
+  <section style="padding:16px 20px 34px;">
+    <div class="sec-h"><h2>使用できる素材</h2></div>
+    <div data-materials style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"></div>
+  </section>
+
+  <!-- ============ NG注意事項 ============ -->
+  <section style="padding:30px 20px 34px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2><span style="color:var(--pink);">NG</span> 注意事項</h2></div>
+    <div data-ng style="display:flex; flex-direction:column; gap:12px;"></div>
+  </section>
+
+  <!-- ============ FOOTER / お問い合わせ ============ -->
+  <footer style="padding:28px 20px 40px; text-align:center;">
+    <a data-line href="#" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:16px; background:var(--green); color:#fff; text-decoration:none; border-radius:100px; font-size:15px; font-weight:900; margin-bottom:12px; box-shadow:0 6px 18px rgba(6,199,85,.28);">
+      <i class="ti ti-brand-line" style="font-size:22px;"></i>LINE でお問い合わせ<i class="ti ti-chevron-right" style="font-size:16px;"></i>
+    </a>
+    <a data-mail href="#" style="display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:16px; background:#fff; color:var(--ink); text-decoration:none; border:1.5px solid #D8DCE2; border-radius:100px; font-size:15px; font-weight:700;">
+      <i class="ti ti-mail" style="font-size:20px; color:#7A808C;"></i>メールで問い合わせる<i class="ti ti-chevron-right" style="font-size:16px; color:#B7BCC5;"></i>
+    </a>
+    <p style="font-size:11px; color:#B0B5BE; line-height:1.6; margin-top:22px;">© ダニ捕りロボ / クリエイター向け案件オリエン資料</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ===== 差し替え項目（ここを編集するだけでOK） ===== */
+  const CONFIG = {
+    joinUrl: "#",                 // 「この案件に参加する」リンク
+    lineUrl: "#",                 // LINE お問い合わせ
+    mailUrl: "mailto:takeru.k@entercommerce.co.jp", // メール問い合わせ
+    materials: {                  // 各素材「選択する」リンク（Google Drive等）
+      product: "#",
+      dani:    "#",
+      logo:    "#",
+      video:   "#",
+    },
+  };
+
+  /* ===== データ ===== */
+  const features = [
+    { icon:"ti ti-rosette-discount", label:"報酬率",   value:"15%" },
+    { icon:"ti ti-player-play",       label:"成果承認", value:"30日以内" },
+    { icon:"ti ti-gift",              label:"報酬条件", value:"あり" },
+    { icon:"ti ti-tags",              label:"単価",     value:"1,723〜8,250円" },
+    { icon:"ti ti-truck",             label:"",         value:"送料無料", solo:true },
+    { icon:"ti ti-package",           label:"",         value:"海外発送可", solo:true },
+  ];
+
+  const usp = [
+    "置くだけ簡単設置",
+    "安心の日本製",
+    "化学性殺虫成分不使用",
+  ];
+
+  const points = [
+    { kind:"shield", stat:"99.9%以上", note:"※捕獲率半年目まで", sub:"ダニ捕獲に特化" },
+    { kind:"box",    stat:"累計2,700万個", note:"※2024年11月時点", sub:"シリーズ販売実績" },
+    { kind:"crown",  stat:"売上第1位", note:"※ダニ対策マット部門で", sub:"各モールを受賞" },
+    { kind:"flag",   stat:"日本製で安心", note:"化学成分不使用設計", sub:"子ども・ペットが使っても" },
+  ];
+
+  const persona = [
+    { icon:"ti ti-users",     title:"子どもがいる家庭", sub:"安心を最優先" },
+    { icon:"ti ti-dog",       title:"ペットと暮らす人", sub:"清潔を保ちたい" },
+    { icon:"ti ti-moon-stars", title:"快適な眠りを求める人", sub:"寝具・布団を大切に使いたい" },
+  ];
+
+  const steps = [
+    { no:"1", accent:"var(--pink)", time:"0〜2秒",   title:"フック",   icon:"ti ti-gift",       desc:"ダニの不安 or 実績でつかむ" },
+    { no:"2", accent:"var(--blue)", time:"2〜8秒",   title:"課題提示", icon:"ti ti-brain",      desc:"寝具・ソファ・梅雨〜夏の不安を言語化" },
+    { no:"3", accent:"var(--blue)", time:"8〜18秒",  title:"解決",     icon:"ti ti-chart-arrows-vertical", desc:"置くだけ・約3ヶ月・99.9%以上※ 伝える" },
+    { no:"4", accent:"var(--blue)", time:"18〜30秒", title:"CTA",      icon:"ti ti-hand-finger", desc:"今やる理由を添えて購入導線へ" },
+  ];
+
+  const hooks = [
+    "これ、布団に置くだけでダニ対策できるの知ってた？",
+    "梅雨明け〜夏って、ダニ対策はじめる人多いらしい",
+    "見えないからこそ、置くだけで対策しておくと安心",
+  ];
+
+  const materials = [
+    { key:"product", label:"商品画像",       icon:"ti ti-photo" },
+    { key:"dani",    label:"ダニの写真や動画", icon:"ti ti-movie" },
+    { key:"logo",    label:"ロゴ素材",        icon:"ti ti-vector", logo:true },
+    { key:"video",   label:"使用動画",        icon:"ti ti-player-play" },
+  ];
+
+  const ng = [
+    ["アフィリエイトリンクの直接", "クーポンコードの公開", "医療効果を保証する表現"],
+    ["比較サイトへの誘導など", "誇大広告表現はNG"],
+  ];
+
+  /* ===== ユーティリティ ===== */
+  const $ = (s, el) => (el || document).querySelector(s);
+  function el(tag, attrs, children) {
+    const n = document.createElement(tag);
+    if (attrs) for (const k in attrs) {
+      if (k === "style") n.style.cssText = attrs[k];
+      else if (k === "html") n.innerHTML = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    }
+    if (children) (Array.isArray(children) ? children : [children]).forEach(c => {
+      if (c == null) return;
+      n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    });
+    return n;
+  }
+
+  /* ===== 案件特徴 ===== */
+  (function renderFeatures() {
+    const wrap = $("[data-features]");
+    features.forEach(f => {
+      const inner = f.solo
+        ? [ el("i", { class:f.icon, style:"font-size:26px; color:var(--pink);" }),
+            el("p", { style:"font-size:14px; font-weight:900; color:var(--ink); margin-top:8px; line-height:1.3;" }, f.value) ]
+        : [ el("i", { class:f.icon, style:"font-size:24px; color:var(--pink);" }),
+            el("p", { style:"font-size:11px; font-weight:700; color:var(--sub); margin-top:7px;" }, f.label),
+            el("p", { style:"font-size:14px; font-weight:900; color:var(--ink); margin-top:2px; line-height:1.25;" }, f.value) ];
+      wrap.appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:16px 8px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:104px;" }, inner));
+    });
+  })();
+
+  /* ===== 商品紹介 USP ===== */
+  (function renderUsp() {
+    const wrap = $("[data-usp]");
+    usp.forEach(u => {
+      wrap.appendChild(el("div", { style:"display:flex; align-items:center; gap:11px;" }, [
+        el("i", { class:"ti ti-circle-check-filled", style:"flex:none; font-size:22px; color:var(--blue);" }),
+        el("p", { style:"font-size:15px; font-weight:700; color:var(--ink);" }, u),
+      ]));
+    });
+  })();
+
+  /* ===== 売れるポイント ===== */
+  (function renderPoints() {
+    const wrap = $("[data-points]");
+    function visual(kind) {
+      if (kind === "flag") {
+        return el("div", { style:"width:46px; height:34px; border-radius:6px; background:#fff; border:1px solid #E3E3E3; box-shadow:0 1px 3px rgba(0,0,0,.08); display:flex; align-items:center; justify-content:center;" },
+          el("span", { style:"width:18px; height:18px; border-radius:50%; background:#BC002D; display:block;" }));
+      }
+      const map = { shield:"ti ti-shield-check-filled", box:"ti ti-package", crown:"ti ti-crown" };
+      return el("i", { class:map[kind], style:"font-size:40px; color:var(--blue);" });
+    }
+    points.forEach(p => {
+      wrap.appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:20px 14px 18px; text-align:center; display:flex; flex-direction:column; align-items:center;" }, [
+        el("div", { style:"height:44px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;" }, visual(p.kind)),
+        el("p", { style:"font-size:18px; font-weight:900; color:var(--ink); line-height:1.2;" }, p.stat),
+        el("p", { style:"font-size:10px; font-weight:500; color:var(--sub); margin-top:5px; line-height:1.4;" }, p.note),
+        el("div", { style:"width:28px; height:2px; background:var(--pink-bd); border-radius:2px; margin:10px 0 8px;" }),
+        el("p", { style:"font-size:12px; font-weight:700; color:#4A4F5A; line-height:1.4;" }, p.sub),
+      ]));
+    });
+  })();
+
+  /* ===== ペルソナ ===== */
+  (function renderPersona() {
+    const wrap = $("[data-persona]");
+    persona.forEach(p => {
+      wrap.appendChild(el("div", { style:"display:flex; align-items:center; gap:15px; background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:16px 18px;" }, [
+        el("div", { style:"flex:none; width:54px; height:54px; border-radius:14px; background:var(--pink-bg); display:flex; align-items:center; justify-content:center;" },
+          el("i", { class:p.icon, style:"font-size:28px; color:var(--pink);" })),
+        el("div", null, [
+          el("p", { style:"font-size:15px; font-weight:900; color:var(--ink); line-height:1.35;" }, p.title),
+          el("p", { style:"font-size:12px; font-weight:500; color:var(--sub); margin-top:3px;" }, p.sub),
+        ]),
+      ]));
+    });
+  })();
+
+  /* ===== 動画の作り方（ステップ） ===== */
+  (function renderSteps() {
+    const wrap = $("[data-steps]");
+    steps.forEach((s, i) => {
+      const row = el("div", { style:"display:flex; gap:14px; align-items:flex-start;" }, [
+        // 左：番号＋縦線
+        el("div", { style:"flex:none; display:flex; flex-direction:column; align-items:center;" }, [
+          el("span", { style:`width:30px; height:30px; border-radius:50%; background:${s.accent}; color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900;` }, s.no),
+          i < steps.length - 1 ? el("span", { style:"width:2px; flex:1; min-height:30px; background:var(--navy-bd); margin:4px 0;" }) : null,
+        ]),
+        // 右：内容
+        el("div", { style:"flex:1; padding-bottom:18px;" }, [
+          el("div", { style:"display:flex; align-items:center; gap:8px; margin-bottom:8px;" }, [
+            el("span", { style:`font-size:12px; font-weight:900; color:${s.accent};` }, s.time),
+            el("span", { style:"font-size:15px; font-weight:900; color:#fff;" }, s.title),
+          ]),
+          el("div", { style:"display:flex; align-items:flex-start; gap:9px;" }, [
+            el("i", { class:s.icon, style:`flex:none; font-size:20px; color:${s.accent}; margin-top:1px;` }),
+            el("p", { style:"font-size:13px; font-weight:400; color:#C7CFDE; line-height:1.6;" }, s.desc),
+          ]),
+        ]),
+      ]);
+      wrap.appendChild(row);
+    });
+  })();
+
+  /* ===== フック例（吹き出し） ===== */
+  (function renderHooks() {
+    const wrap = $("[data-hooks]");
+    hooks.forEach(h => {
+      wrap.appendChild(el("div", { style:"display:flex; gap:10px; align-items:flex-start; background:var(--navy2); border:1px solid var(--navy-bd); border-radius:12px; padding:13px 14px;" }, [
+        el("i", { class:"ti ti-quote", style:"flex:none; font-size:16px; color:var(--pink); margin-top:2px;" }),
+        el("p", { style:"font-size:13px; font-weight:700; color:#E7ECF5; line-height:1.6;" }, h),
+      ]));
+    });
+  })();
+
+  /* ===== 使用できる素材 ===== */
+  (function renderMaterials() {
+    const wrap = $("[data-materials]");
+    materials.forEach(m => {
+      const thumb = m.logo
+        ? el("div", { style:"display:flex; align-items:center; justify-content:center; height:78px; background:#FBF3F6; border-radius:10px; margin-bottom:12px;" },
+            el("span", { style:"font-size:15px; font-weight:900; color:var(--pink); letter-spacing:.02em;" }, "ダニ捕りロボ"))
+        : (function () {
+            const w = el("div", { class:"imgwrap", style:"height:78px; border-radius:10px; margin-bottom:12px;" });
+            const img = el("img", { src:`./assets/mat-${m.key}.jpg`, alt:m.label });
+            img.setAttribute("onerror", "this.style.display='none';this.nextElementSibling.style.display='flex';");
+            const ph = el("div", { class:"ph" }, el("i", { class:m.icon }));
+            w.append(img, ph);
+            return w;
+          })();
+
+      const btn = el("a", { href:CONFIG.materials[m.key] || "#", target:"_blank", rel:"noopener",
+        style:"display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:9px; background:#fff; border:1.5px solid var(--pink); color:var(--pink); border-radius:10px; text-decoration:none; font-size:12px; font-weight:900;" }, [
+        el("span", null, "選択する"),
+        el("i", { class:"ti ti-chevron-right", style:"font-size:14px;" }),
+      ]);
+
+      wrap.appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:14px;" }, [
+        el("p", { style:"font-size:13px; font-weight:900; color:var(--ink); margin-bottom:10px;" }, m.label),
+        thumb, btn,
+      ]));
+    });
+  })();
+
+  /* ===== NG注意事項 ===== */
+  (function renderNg() {
+    const wrap = $("[data-ng]");
+    ng.forEach(group => {
+      const list = el("div", { style:"flex:1; display:flex; flex-direction:column; gap:7px;" });
+      group.forEach(item => {
+        list.appendChild(el("div", { style:"display:flex; gap:8px; align-items:flex-start;" }, [
+          el("span", { style:"flex:none; width:5px; height:5px; border-radius:50%; background:var(--pink); margin-top:8px;" }),
+          el("p", { style:"font-size:13px; font-weight:500; color:#3E434E; line-height:1.6;" }, item),
+        ]));
+      });
+      wrap.appendChild(el("div", { style:"display:flex; gap:13px; align-items:flex-start; background:#fff; border:1.5px solid var(--pink-bd); border-radius:14px; padding:16px;" }, [
+        el("span", { style:"flex:none; width:38px; height:38px; border-radius:50%; background:var(--pink); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900; letter-spacing:.02em;" }, "NG"),
+        list,
+      ]));
+    });
+  })();
+
+  /* ===== 差し替え値の反映 ===== */
+  document.querySelectorAll("[data-join]").forEach(a => { a.href = CONFIG.joinUrl; });
+  document.querySelectorAll("[data-line]").forEach(a => { a.href = CONFIG.lineUrl; });
+  document.querySelectorAll("[data-mail]").forEach(a => { a.href = CONFIG.mailUrl; });
+})();
+</script>
+</body>
+</html>
