@@ -197,15 +197,11 @@
 
   /* ===== 差し替え項目（ここを編集するだけでOK） ===== */
   const CONFIG = {
-    joinUrl: "#",                 // 「この案件に参加する」リンク
-    lineUrl: "#",                 // LINE お問い合わせ
-    mailUrl: "mailto:takeru.k@entercommerce.co.jp", // メール問い合わせ
-    materials: {                  // 各素材「選択する」リンク（Google Drive等）
-      product: "#",
-      dani:    "#",
-      logo:    "#",
-      video:   "#",
-    },
+    // 「この案件に参加する」＝ 商品URL（TikTok アフィリエイト共有リンク）
+    productUrl:   "https://affiliate.tiktok.com/api/v1/share/AL1Sn0yNfgFd",
+    lineUrl:      "https://line.me/R/ti/p/@314uaudq?oat_content=url&ts=06192309", // LINE お問い合わせ
+    mailUrl:      "mailto:agency@entercommerce.co.jp",                           // メール問い合わせ
+    materialsUrl: "https://drive.google.com/drive/folders/1GHuZXN5JtEAkgclCXTXAhjPhWisjlq2d", // 各素材「選択する」共通リンク
   };
 
   /* ===== データ ===== */
@@ -393,7 +389,7 @@
             return w;
           })();
 
-      const btn = el("a", { href:CONFIG.materials[m.key] || "#", target:"_blank", rel:"noopener",
+      const btn = el("a", { href:CONFIG.materialsUrl || "#", target:"_blank", rel:"noopener",
         style:"display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:9px; background:#fff; border:1.5px solid var(--pink); color:var(--pink); border-radius:10px; text-decoration:none; font-size:12px; font-weight:900;" }, [
         el("span", null, "選択する"),
         el("i", { class:"ti ti-chevron-right", style:"font-size:14px;" }),
@@ -425,7 +421,7 @@
   })();
 
   /* ===== 差し替え値の反映 ===== */
-  document.querySelectorAll("[data-join]").forEach(a => { a.href = CONFIG.joinUrl; });
+  document.querySelectorAll("[data-join]").forEach(a => { a.href = CONFIG.productUrl; });
   document.querySelectorAll("[data-line]").forEach(a => { a.href = CONFIG.lineUrl; });
   document.querySelectorAll("[data-mail]").forEach(a => { a.href = CONFIG.mailUrl; });
 })();
