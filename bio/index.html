@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* /bio のように末尾スラッシュ無しで配信された場合でも、
+     ./assets/... をこのLPフォルダ配下へ正しく解決させる（フォルダ名変更にも追従） */
+  (function () {
+    var p = location.pathname;
+    if (!/\/$/.test(p)) {
+      var seg = p.substring(p.lastIndexOf('/') + 1);
+      if (seg && seg.indexOf('.') === -1) document.write('<base href="' + seg + '/">');
+    }
+  })();
+</script>
+<title>3STEP BIO（スリーステップ ビオ）｜クリエイター向け案件オリエン</title>
+<meta name="description" content="生きた菌4種を3STEPで設計した腸活サプリ「3STEP BIO」のクリエイター向け案件オリエンLP。報酬・素材・動画の作り方・NG表現まとめ。">
+
+<!-- OGP -->
+<meta property="og:title" content="3STEP BIO｜クリエイター向け案件オリエン">
+<meta property="og:description" content="菌は「数」より、働き。生菌4種×3STEP設計の腸活サプリ。素材・台本の型・NG表現をまとめました。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/package.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css">
+
+<style>
+  :root{
+    --accent:#1D2B5A; --accent-d:#131D40; --accent-bg:#EEF1F8; --accent-bd:#CBD3E8;
+    --gold:#B88A2E; --gold-bg:#FBF4E4; --gold-bd:#EAD3A0;
+    --orange:#EE7D1E;
+    --ink:#1F2433; --sub:#8A8F9A; --line:#ECECEC; --cream:#FAF7F1;
+    --navy:#121A33; --navy2:#1C2645; --navy-bd:#2B3758;
+    --green:#06C755; --red:#D9364F; --red-bg:#FDEEF1; --red-bd:#F4C4CE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #EDEDED; }
+  ::selection { background: var(--accent); color: #fff; }
+  button, a { font-family: inherit; }
+  .app {
+    max-width: 430px; margin: 0 auto; background: #fff; color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif; min-height: 100vh;
+    overflow: hidden; position: relative;
+  }
+  /* セクション見出し */
+  .sec-h { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .sec-h::before { content:""; width:5px; height:20px; border-radius:3px; background:var(--gold); }
+  .sec-h h2 { font-size:20px; font-weight:900; letter-spacing:.01em; }
+  /* 画像（assets が無い場合はプレースホルダ表示） */
+  .imgwrap { position:relative; width:100%; overflow:hidden; }
+  .imgwrap > img { display:block; width:100%; height:auto; }
+  .ph { display:none; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+        width:100%; aspect-ratio:16/10; background:linear-gradient(135deg,#F3F0E8 0%,#EEF1F8 100%); color:#A9A08C; }
+  .ph span { font-size:11px; font-weight:700; letter-spacing:.04em; }
+  /* 横スクロール（3STEP図解） */
+  .hscroll { display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 20px 8px; margin:0 -20px; -webkit-overflow-scrolling:touch; }
+  .hscroll::-webkit-scrollbar { display:none; }
+  .hscroll > * { flex:0 0 86%; scroll-snap-align:center; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ HERO ============ -->
+  <section style="position:relative; padding:0 0 26px; background:linear-gradient(180deg,#F7F2E7 0%,#FBF8F2 46%,#fff 100%);">
+
+    <!-- 商品ビジュアル（公式パネル・全幅） -->
+    <div class="imgwrap">
+      <img src="./assets/hero.jpg" alt="3STEP BIO｜1袋に菌数5兆個配合・菌同士の連携に着目した3STEP設計・生菌4種プレミアム処方" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph"><span>商品ビジュアル（hero.jpg）</span></div>
+    </div>
+
+    <!-- タイトル -->
+    <div style="padding:20px 20px 0;">
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:12px;">
+        <span style="background:var(--accent); color:#fff; font-size:11px; font-weight:900; letter-spacing:.06em; padding:5px 13px; border-radius:100px; box-shadow:0 3px 8px rgba(29,43,90,.25);">成果報酬</span>
+        <span style="font-size:11px; font-weight:700; color:var(--sub);">アフィリエイト案件</span>
+      </div>
+      <h1 style="font-size:26px; font-weight:900; line-height:1.28; letter-spacing:.01em;">3STEP BIO</h1>
+      <p style="font-size:14px; font-weight:700; color:#4A4F5A; margin-top:2px;">スリーステップ ビオ（30粒／30日分）</p>
+      <p style="margin-top:10px; line-height:1; color:var(--ink);"><span style="font-size:28px; font-weight:900;" data-price></span><span style="font-size:16px; font-weight:900;">円</span><span style="font-size:17px; font-weight:700; color:var(--sub);">〜</span></p>
+      <p style="font-size:11px; font-weight:500; color:var(--sub); margin-top:10px; line-height:1.5;">1日1粒目安／対象年齢15歳以上／ブランド：BLACK PACK</p>
+    </div>
+
+    <!-- 報酬（通常→UP後） -->
+    <div style="padding:18px 20px 0;">
+      <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div style="background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:14px 12px 12px; text-align:center;">
+          <p style="font-size:12px; font-weight:700; color:#7A808C; margin-bottom:4px;">通常</p>
+          <p style="font-size:15px; font-weight:700; color:var(--ink); line-height:1;"><span style="font-size:34px; font-weight:900;" data-rate-normal></span>%</p>
+        </div>
+        <div style="background:var(--gold-bg); border:1.5px solid var(--gold-bd); border-radius:14px; padding:10px 12px 12px; text-align:center;">
+          <p style="font-size:13px; font-weight:900; color:var(--gold); margin-bottom:2px;" data-rate-diff></p>
+          <p style="font-size:16px; font-weight:700; color:var(--gold); line-height:1;"><span style="font-size:40px; font-weight:900;" data-rate-up></span>%</p>
+        </div>
+        <span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:2; width:30px; height:30px; border-radius:50%; background:#fff; border:1.5px solid var(--gold-bd); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,.08);">
+          <i class="ti ti-chevron-right" style="font-size:18px; color:var(--gold);"></i>
+        </span>
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:8px; margin-top:12px;">
+        <span style="background:var(--accent); color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:100px;">日本製</span>
+        <span style="background:var(--gold-bg); color:var(--gold); border:1px solid var(--gold-bd); font-size:11px; font-weight:900; padding:5px 12px; border-radius:100px;">国内GMP認定工場</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="padding:20px 20px 0;">
+      <a data-join href="#" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:18px; background:var(--accent); color:#fff; text-decoration:none; border-radius:14px; font-size:17px; font-weight:900; letter-spacing:.02em; box-shadow:0 8px 22px rgba(29,43,90,.30);">
+        この案件に参加する
+        <span style="width:26px; height:26px; border-radius:50%; background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center;"><i class="ti ti-arrow-right" style="font-size:16px;"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 商品紹介 ============ -->
+  <section style="padding:30px 20px 34px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2>商品紹介</h2></div>
+    <div class="imgwrap" style="border-radius:14px; margin-bottom:16px; box-shadow:0 6px 18px rgba(60,50,30,.12); background:#fff;">
+      <img src="./assets/product.jpg" alt="3STEP BIO パッケージ（UVカットのアルミパウチ）" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph"><span>商品画像（product.jpg）</span></div>
+    </div>
+    <p style="font-size:16px; font-weight:900; line-height:1.6; margin-bottom:6px;">菌は「数」より、<span style="color:var(--orange);">働き。</span></p>
+    <p style="font-size:13px; font-weight:400; color:#5A606C; line-height:1.85; margin-bottom:14px;">生きた菌4種（糖化菌・乳酸菌・ビフィズス菌・酪酸菌）に、菌のエサになる成分、菌がつくる成分まで組み合わせた<b style="color:var(--ink);">「トリプルバイオティクス」</b>設計のサプリ。<b style="color:var(--ink);">菌同士の連携</b>に着目し、1袋に約5兆個の菌を配合。生きた菌を光や胃酸から守る<b style="color:var(--ink);">3重のバリア</b>で、届けるところまで考えています。</p>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+      <span style="font-size:11px; font-weight:700; color:#5A606C; background:#fff; border:1px solid var(--line); border-radius:100px; padding:5px 11px;">プロ×プレ×ポストバイオティクス</span>
+      <span style="font-size:11px; font-weight:700; color:#5A606C; background:#fff; border:1px solid var(--line); border-radius:100px; padding:5px 11px;">ブランド：BLACK PACK</span>
+      <span style="font-size:11px; font-weight:700; color:#5A606C; background:#fff; border:1px solid var(--line); border-radius:100px; padding:5px 11px;">製造：日本（国内GMP認定工場）</span>
+    </div>
+    <div data-usp style="display:flex; flex-direction:column; gap:11px;"></div>
+  </section>
+
+  <!-- ============ 独自設計「3STEP」 ============ -->
+  <section style="padding:30px 20px 34px;">
+    <div class="sec-h"><h2>独自設計「3STEP」</h2></div>
+    <p style="font-size:13px; color:#5A606C; line-height:1.8; margin-bottom:18px;">生きた菌が働くには、それぞれに合った<b style="color:var(--ink);">“エサ”やサポート役</b>が必要。菌ごとに必要なものを組み合わせ、<b style="color:var(--ink);">短鎖脂肪酸（たんさしぼうさん）</b>づくりまで3段階で考えた設計です。</p>
+    <div data-steps3 style="display:flex; flex-direction:column; gap:10px; margin-bottom:18px;"></div>
+    <p style="font-size:11px; font-weight:700; color:var(--sub); margin-bottom:8px;">公式の図解（横にスワイプ）</p>
+    <div class="hscroll" data-stepimgs></div>
+  </section>
+
+  <!-- ============ 3重のバリア ============ -->
+  <section style="padding:30px 20px 34px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2>生きた菌を守る「3重のバリア」</h2></div>
+    <p style="font-size:13px; color:#5A606C; line-height:1.8; margin-bottom:16px;">菌は<b style="color:var(--ink);">紫外線や胃酸に弱い</b>もの。届ける瞬間の“鮮度”まで考えて、3つのバリアで守ります。</p>
+    <div class="imgwrap" style="border-radius:14px; margin-bottom:16px; box-shadow:0 6px 18px rgba(60,50,30,.10); background:#fff;">
+      <img src="./assets/barrier.png" alt="生きた菌を守る3重のバリア設計" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="ph"><span>3重のバリア（barrier.png）</span></div>
+    </div>
+    <div data-barrier style="display:flex; flex-direction:column; gap:10px;"></div>
+  </section>
+
+  <!-- ============ 売れるポイント ============ -->
+  <section style="padding:30px 20px 34px;">
+    <div class="sec-h"><h2>売れるポイント</h2></div>
+    <div data-points style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"></div>
+  </section>
+
+  <!-- ============ ペルソナターゲット ============ -->
+  <section style="padding:30px 20px 34px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2>ペルソナターゲット</h2></div>
+    <div data-persona style="display:flex; flex-direction:column; gap:12px;"></div>
+  </section>
+
+  <!-- ============ 動画訴求のポイント（ダーク） ============ -->
+  <section style="padding:0;">
+    <div style="background:var(--navy); border-radius:20px; margin:28px 16px; padding:26px 20px 24px; color:#EAEEF6;">
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:22px;">
+        <i class="ti ti-player-play-filled" style="font-size:20px; color:#E6C27A;"></i>
+        <h2 style="font-size:19px; font-weight:900; color:#fff;">動画訴求のポイント</h2>
+      </div>
+      <div data-steps></div>
+
+      <!-- 4つの見せ場 -->
+      <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--navy-bd);">
+        <span style="display:inline-block; background:#2A3A66; color:#AFC4F2; font-size:11px; font-weight:900; letter-spacing:.04em; padding:4px 13px; border-radius:100px; margin-bottom:14px;">この商品の見せ場</span>
+        <p style="font-size:11px; color:#8B96AD; line-height:1.7; margin-bottom:14px;">サプリは“飲んですぐ分かる変化”が撮れません。次の4つで見せ場を作ります。</p>
+        <div data-showcases style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"></div>
+      </div>
+
+      <!-- フック例 -->
+      <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--navy-bd);">
+        <span style="display:inline-block; background:#E6C27A; color:#1C2645; font-size:11px; font-weight:900; letter-spacing:.04em; padding:4px 13px; border-radius:100px; margin-bottom:13px;">フック例</span>
+        <div data-hooks></div>
+      </div>
+
+      <!-- 共通の作り方 -->
+      <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--navy-bd);">
+        <span style="display:inline-block; background:#2A3A66; color:#AFC4F2; font-size:11px; font-weight:900; letter-spacing:.04em; padding:4px 13px; border-radius:100px; margin-bottom:14px;">共通の作り方（これだけ守ればOK）</span>
+        <div data-checklist style="display:flex; flex-direction:column; gap:9px;"></div>
+      </div>
+
+      <!-- 体験の伝え方 -->
+      <div style="margin-top:16px; display:flex; gap:11px; align-items:flex-start; background:#2B2414; border:1px solid #5C4A22; border-radius:13px; padding:14px 15px;">
+        <span style="flex:none; width:22px; height:22px; border-radius:50%; background:#E6C27A; color:#1C2645; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:900; margin-top:1px;">!</span>
+        <p style="font-size:12px; color:#F1E6CC; line-height:1.65;"><b style="color:#fff;">体験の伝え方：</b>「お腹の調子が良くなった」など<b style="color:#fff;">体の変化は言い切らない</b>のがルール。「毎朝1粒が習慣になった」「小さくて飲みやすい」など<b style="color:#fff;">続けやすさ・使い心地</b>の感想で語りましょう。</p>
+      </div>
+
+      <p style="font-size:11px; color:#8B96AD; line-height:1.7; margin-top:18px;">※左下はショップボタン用に空ける ／ 1カット約2秒 ／ ナレーションありが◎</p>
+    </div>
+  </section>
+
+  <!-- ============ 使用できる素材 ============ -->
+  <section style="padding:16px 20px 34px;">
+    <div class="sec-h"><h2>使用できる素材</h2></div>
+    <div data-materials style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"></div>
+
+    <div style="margin-top:16px;">
+      <p style="font-size:12px; font-weight:900; color:var(--ink); margin-bottom:10px;">使用ルール</p>
+      <div data-matrules style="display:flex; flex-direction:column; gap:9px;"></div>
+    </div>
+  </section>
+
+  <!-- ============ NG注意事項 ============ -->
+  <section style="padding:30px 20px 40px; background:var(--cream); border-top:1px solid var(--line);">
+    <div class="sec-h"><h2><span style="color:var(--red);">NG</span> 注意事項・言い方のルール</h2></div>
+    <p style="font-size:12px; color:var(--sub); line-height:1.7; margin-bottom:16px;">健康食品（サプリ）のため、<b style="color:var(--ink);">薬機法・健康増進法・景表法</b>に特に注意してください。効果・効能をうたう表現はNGです。</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-bottom:14px;">
+      <div style="background:#fff; border:1.5px solid #BFE3C6; border-radius:14px; padding:15px 13px;">
+        <p style="display:flex; align-items:center; gap:6px; font-size:13px; font-weight:900; color:#1E9E4A; margin-bottom:11px;"><i class="ti ti-circle-check-filled" style="font-size:17px;"></i>OKな言い方</p>
+        <div data-ok style="display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+      <div style="background:#fff; border:1.5px solid var(--red-bd); border-radius:14px; padding:15px 13px;">
+        <p style="display:flex; align-items:center; gap:6px; font-size:13px; font-weight:900; color:var(--red); margin-bottom:11px;"><span style="width:18px; height:18px; border-radius:50%; background:var(--red); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:900;">×</span>NGな言い方</p>
+        <div data-ngwords style="display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </div>
+
+    <div data-ng style="display:flex; flex-direction:column; gap:10px;"></div>
+  </section>
+
+  <!-- ============ FOOTER / お問い合わせ ============ -->
+  <footer style="padding:28px 20px 40px; text-align:center;">
+    <a data-line href="#" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:16px; background:var(--green); color:#fff; text-decoration:none; border-radius:100px; font-size:15px; font-weight:900; margin-bottom:12px; box-shadow:0 6px 18px rgba(6,199,85,.28);">
+      <i class="ti ti-brand-line" style="font-size:22px;"></i>LINE でお問い合わせ<i class="ti ti-chevron-right" style="font-size:16px;"></i>
+    </a>
+    <a data-mail href="#" style="display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:16px; background:#fff; color:var(--ink); text-decoration:none; border:1.5px solid #D8DCE2; border-radius:100px; font-size:15px; font-weight:700;">
+      <i class="ti ti-mail" style="font-size:20px; color:#7A808C;"></i>メールで問い合わせる<i class="ti ti-chevron-right" style="font-size:16px; color:#B7BCC5;"></i>
+    </a>
+    <p style="font-size:11px; color:#B0B5BE; line-height:1.6; margin-top:22px;">© BLACK PACK / クリエイター向け案件オリエン資料</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ===== 差し替え項目（ここを編集するだけでOK） ===== */
+  const CONFIG = {
+    price:        "2,220",           // 表示価格（「◯円〜」の数字部分）
+    rateNormal:   "◯",               // 通常の報酬率（%）  ← 確定したら数字に
+    rateUp:       "◯",               // UP後の報酬率（%）  ← 確定したら数字に
+    // 「この案件に参加する」＝ 商品URL（TikTok アフィリエイト共有リンク）
+    productUrl:   "#",
+    lineUrl:      "https://line.me/R/ti/p/@314uaudq?oat_content=url&ts=06192309", // LINE お問い合わせ
+    mailUrl:      "mailto:agency@entercommerce.co.jp",                           // メール問い合わせ
+    materialsUrl: "#",                // 各素材「選択する」共通リンク（Google Drive 等）
+  };
+
+  /* ===== データ ===== */
+  const usp = [
+    "生きた菌4種をすべて配合（1袋に約5兆個）",
+    "1日1粒・海外製より小さめで飲みやすい",
+    "日本製・国内GMP認定工場で生産",
+  ];
+
+  const steps3 = [
+    { no:"1", title:"発酵のはじまり", pair:"糖化菌 × ビール酵母",
+      desc:"生きた糖化菌の“理想的な栄養源”として、栄養たっぷりのビール酵母を配合。" },
+    { no:"2", title:"発酵をつなぐ", pair:"乳酸菌・ビフィズス菌 × フラクトオリゴ糖・イヌリン",
+      desc:"発酵性食物繊維を2種。素早く発酵するフラクトオリゴ糖と、マイルドに発酵するイヌリンの“W発酵設計”。" },
+    { no:"3", title:"発酵の仕上げ", pair:"酪酸菌 × ビタミンB1",
+      desc:"酪酸菌のサポート役となるビタミンB1を、1粒に1日分（玄米約7.5杯分）配合。" },
+  ];
+
+  const stepImgs = [
+    { src:"./assets/step1.png", alt:"STEP1 発酵のはじまり" },
+    { src:"./assets/step2.png", alt:"STEP2 発酵をつなぐ" },
+    { src:"./assets/step3.png", alt:"STEP3 発酵の仕上げ" },
+  ];
+
+  const barrier = [
+    { no:"1", title:"アルミパッケージ", desc:"紫外線をほぼ100%カットする上質なアルミパウチ" },
+    { no:"2", title:"UVカットカプセル", desc:"菌を光による劣化から守るカプセル" },
+    { no:"3", title:"pH応答型スマートカプセル", desc:"胃酸を感知して中身をガードし、腸に届いてから溶ける設計" },
+  ];
+
+  const points = [
+    { mark:"5兆", stat:"菌数 約5兆個", note:"※1袋あたり", sub:"生きた菌4種を贅沢処方" },
+    { mark:"3", stat:"3STEP設計", note:"菌同士の連携に着目", sub:"菌ごとにエサ・サポート役を配合" },
+    { mark:"UV", stat:"3重のバリア", note:"UVカット＋pH応答型", sub:"届ける瞬間の“鮮度”まで" },
+    { mark:"JP", stat:"日本製", note:"国内GMP認定工場", sub:"小さめサイズで毎日続けやすい" },
+  ];
+
+  const persona = [
+    { mark:"01", title:"腸活を習慣にしたい人", sub:"毎日1粒で手軽に続けたい" },
+    { mark:"02", title:"大きいサプリが苦手な人", sub:"海外製の大粒が飲みにくかった" },
+    { mark:"03", title:"菌の“質”で選びたい人", sub:"乳酸菌サプリの違いが分からない" },
+  ];
+
+  const steps = [
+    { no:"1", accent:"#E6C27A", time:"0〜2秒",   title:"フック",   desc:"商品をすぐ見せる。「菌は数より働き」で掴む" },
+    { no:"2", accent:"#6E93E0", time:"2〜8秒",   title:"課題提示", desc:"サプリが続かない・大きくて飲みにくい・違いが分からない" },
+    { no:"3", accent:"#6E93E0", time:"8〜18秒",  title:"解決",     desc:"生菌4種×3STEP設計・3重バリア・1日1粒の小粒" },
+    { no:"4", accent:"#EE7D1E", time:"18〜30秒", title:"CTA",      desc:"「今日から習慣に」を添えて購入導線へ" },
+  ];
+
+  const showcases = [
+    { title:"手軽さ",   desc:"1日1粒・小さめサイズを手に取って見せる" },
+    { title:"設計の違い", desc:"3STEPの図解で「菌×エサ」の組み合わせを説明" },
+    { title:"鮮度",     desc:"アルミパウチ・UVカットカプセルの“守る”工夫" },
+    { title:"信頼",     desc:"日本製・国内GMP認定工場・菌数約5兆個" },
+  ];
+
+  const hooks = [
+    "乳酸菌サプリ、“菌の数”だけで選んでない？",
+    "菌って、実は光や胃酸に弱いって知ってた？",
+    "大きいサプリが苦手な人、これ小さいよ",
+  ];
+
+  const checklist = [
+    "最初の2秒で商品を出す（引っぱらない）",
+    "1カット約2秒のテンポで／ナレーションありが◎",
+    "「効く」ではなく「設計」「習慣」「続けやすさ」で語る",
+    "飲むシーンを朝のルーティンなど日常の中で見せる",
+    "1本に1回、素の一言・感想を入れてコメントを誘う",
+    "左下はショップボタン用に空ける",
+  ];
+
+  const materials = [
+    { label:"商品画像",       thumb:"./assets/package.jpg" },
+    { label:"3STEP図解",      thumb:"./assets/step1.png" },
+    { label:"3重バリア図解",  thumb:"./assets/barrier.png" },
+    { label:"ロゴ素材",       logo:true },
+  ];
+
+  const matRules = [
+    "公式の商品画像・図解を提供します（素材フォルダから選択）",
+    "公式素材は加工せず、そのまま使用してください",
+    "他社比較の図解を使う場合も、他社名・他社商品は出さない",
+  ];
+
+  const okPhrases = ["毎日の腸活習慣に", "菌の働きに着目した設計", "1日1粒で続けやすい"];
+  const ngPhrases = [
+    "「腸内環境が改善する」「便秘が治る」「お通じがよくなる」",
+    "「免疫力が上がる」「痩せる」「肌がきれいになる」",
+    "「病気の予防・治療に」「医師も推奨」",
+  ];
+
+  const ng = [
+    "体の変化を言い切る体験談はNG。感想は「続けやすさ・使い心地」中心に（必要に応じて「※個人の感想です」）",
+    "「5兆個」「ほぼ100%カット」などの数値はメーカー表記どおりに。盛らない・言い換えない",
+    "飲む前後の比較（ビフォーアフター）や体型・体調の変化を見せる演出はNG",
+    "他社・競合商品の名前を出した比較や誹謗中傷はNG",
+    "#PR 表記・アフィリエイトリンクの貼り忘れに注意",
+  ];
+
+  /* ===== ユーティリティ ===== */
+  const $ = (s, el) => (el || document).querySelector(s);
+  function el(tag, attrs, children) {
+    const n = document.createElement(tag);
+    if (attrs) for (const k in attrs) {
+      if (k === "style") n.style.cssText = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    }
+    if (children) (Array.isArray(children) ? children : [children]).forEach(c => {
+      if (c == null) return;
+      n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    });
+    return n;
+  }
+  /* 丸バッジ（アイコンフォントに依存しない記号表示） */
+  function badge(txt, bg, fg, size) {
+    size = size || 20;
+    return el("span", { style:`flex:none; width:${size}px; height:${size}px; border-radius:50%; background:${bg}; color:${fg}; display:inline-flex; align-items:center; justify-content:center; font-size:${Math.round(size*0.55)}px; font-weight:900; line-height:1;` }, txt);
+  }
+  function check(color) {
+    return el("i", { class:"ti ti-circle-check-filled", style:`flex:none; font-size:17px; color:${color}; margin-top:1px;` });
+  }
+  function img(src, alt) {
+    const w = el("div", { class:"imgwrap", style:"border-radius:12px; background:#fff; box-shadow:0 4px 12px rgba(60,50,30,.10);" });
+    const i = el("img", { src, alt });
+    i.setAttribute("onerror", "this.style.display='none';this.nextElementSibling.style.display='flex';");
+    w.append(i, el("div", { class:"ph" }, el("span", null, alt)));
+    return w;
+  }
+
+  /* ===== 価格・報酬率 ===== */
+  $("[data-price]").textContent = CONFIG.price;
+  $("[data-rate-normal]").textContent = CONFIG.rateNormal;
+  $("[data-rate-up]").textContent = CONFIG.rateUp;
+  const n = parseFloat(CONFIG.rateNormal), u = parseFloat(CONFIG.rateUp);
+  $("[data-rate-diff]").textContent = (isFinite(n) && isFinite(u)) ? `+${u - n}%` : "UP後";
+
+  /* ===== 商品紹介 USP ===== */
+  usp.forEach(t => $("[data-usp]").appendChild(el("div", { style:"display:flex; align-items:center; gap:11px;" }, [
+    el("i", { class:"ti ti-circle-check-filled", style:"flex:none; font-size:22px; color:var(--gold);" }),
+    el("p", { style:"font-size:14.5px; font-weight:700; color:var(--ink); line-height:1.45;" }, t),
+  ])));
+
+  /* ===== 3STEP ===== */
+  steps3.forEach(s => $("[data-steps3]").appendChild(el("div", { style:"display:flex; gap:14px; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:15px 16px;" }, [
+    el("div", { style:"flex:none; width:44px; height:44px; border-radius:12px; background:var(--accent); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1;" }, [
+      el("span", { style:"font-size:8px; font-weight:900; letter-spacing:.06em; color:#E6C27A;" }, "STEP"),
+      el("span", { style:"font-size:19px; font-weight:900; margin-top:2px;" }, s.no),
+    ]),
+    el("div", { style:"min-width:0;" }, [
+      el("p", { style:"font-size:15px; font-weight:900; color:var(--ink); line-height:1.3;" }, s.title),
+      el("p", { style:"display:inline-block; font-size:11px; font-weight:900; color:var(--gold); background:var(--gold-bg); border-radius:6px; padding:3px 8px; margin-top:6px; line-height:1.4;" }, s.pair),
+      el("p", { style:"font-size:12px; font-weight:500; color:#5A606C; line-height:1.6; margin-top:6px;" }, s.desc),
+    ]),
+  ])));
+  stepImgs.forEach(s => $("[data-stepimgs]").appendChild(img(s.src, s.alt)));
+
+  /* ===== 3重のバリア ===== */
+  barrier.forEach(b => $("[data-barrier]").appendChild(el("div", { style:"display:flex; align-items:center; gap:13px; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:13px 15px;" }, [
+    badge(b.no, "var(--gold)", "#fff", 28),
+    el("div", null, [
+      el("p", { style:"font-size:14px; font-weight:900; color:var(--ink); line-height:1.35;" }, b.title),
+      el("p", { style:"font-size:12px; font-weight:500; color:var(--sub); line-height:1.5; margin-top:2px;" }, b.desc),
+    ]),
+  ])));
+
+  /* ===== 売れるポイント ===== */
+  points.forEach(p => $("[data-points]").appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:20px 12px 18px; text-align:center; display:flex; flex-direction:column; align-items:center;" }, [
+    el("div", { style:"width:48px; height:48px; border-radius:50%; background:var(--accent); color:#E6C27A; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; margin-bottom:12px; letter-spacing:-.02em;" }, p.mark),
+    el("p", { style:"font-size:17px; font-weight:900; color:var(--ink); line-height:1.25;" }, p.stat),
+    el("p", { style:"font-size:10px; font-weight:500; color:var(--sub); margin-top:5px; line-height:1.4;" }, p.note),
+    el("div", { style:"width:28px; height:2px; background:var(--gold-bd); border-radius:2px; margin:10px 0 8px;" }),
+    el("p", { style:"font-size:12px; font-weight:700; color:#4A4F5A; line-height:1.45;" }, p.sub),
+  ])));
+
+  /* ===== ペルソナ ===== */
+  persona.forEach(p => $("[data-persona]").appendChild(el("div", { style:"display:flex; align-items:center; gap:15px; background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:16px 18px;" }, [
+    el("div", { style:"flex:none; width:50px; height:50px; border-radius:14px; background:var(--accent-bg); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:900;" }, p.mark),
+    el("div", null, [
+      el("p", { style:"font-size:15px; font-weight:900; color:var(--ink); line-height:1.35;" }, p.title),
+      el("p", { style:"font-size:12px; font-weight:500; color:var(--sub); margin-top:3px;" }, p.sub),
+    ]),
+  ])));
+
+  /* ===== 動画訴求のポイント（横並び4ステップ＋矢印） ===== */
+  (function () {
+    const wrap = $("[data-steps]");
+    wrap.style.cssText = "display:flex; align-items:flex-start; justify-content:space-between;";
+    steps.forEach((s, i) => {
+      wrap.appendChild(el("div", { style:"flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 2px;" }, [
+        el("span", { style:`width:26px; height:26px; border-radius:50%; background:${s.accent}; color:#121A33; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:900;` }, s.no),
+        el("p", { style:`font-size:10px; font-weight:900; color:${s.accent}; line-height:1.25; margin-top:8px;` }, s.time),
+        el("p", { style:"font-size:12px; font-weight:900; color:#fff; line-height:1.25; margin-top:2px;" }, s.title),
+        el("p", { style:"font-size:10px; font-weight:400; color:#C7CFDE; line-height:1.55; margin-top:7px;" }, s.desc),
+      ]));
+      if (i < steps.length - 1) wrap.appendChild(el("div", { style:"flex:none; margin-top:7px; color:#8A93A6; font-size:13px; line-height:1;" }, "▶"));
+    });
+  })();
+
+  showcases.forEach((s, i) => $("[data-showcases]").appendChild(el("div", { style:"background:var(--navy2); border:1px solid var(--navy-bd); border-radius:12px; padding:13px 12px;" }, [
+    el("div", { style:"display:flex; align-items:center; gap:8px; margin-bottom:7px;" }, [
+      badge(String(i + 1), "#E6C27A", "#121A33", 20),
+      el("span", { style:"font-size:13px; font-weight:900; color:#fff;" }, s.title),
+    ]),
+    el("p", { style:"font-size:11px; font-weight:400; color:#C7CFDE; line-height:1.55;" }, s.desc),
+  ])));
+
+  (function () {
+    const wrap = $("[data-hooks]");
+    wrap.style.cssText = "display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;";
+    hooks.forEach(h => wrap.appendChild(el("div", { style:"background:#fff; border-radius:11px; padding:11px 9px; text-align:center;" },
+      el("p", { style:"font-size:10.5px; font-weight:700; color:#2A2F3A; line-height:1.55;" }, h))));
+  })();
+
+  checklist.forEach(c => $("[data-checklist]").appendChild(el("div", { style:"display:flex; gap:10px; align-items:flex-start;" }, [
+    check("#E6C27A"),
+    el("p", { style:"font-size:12px; font-weight:500; color:#D6DDEA; line-height:1.6;" }, c),
+  ])));
+
+  /* ===== 使用できる素材 ===== */
+  materials.forEach(m => {
+    const thumb = m.logo
+      ? el("div", { style:"display:flex; align-items:center; justify-content:center; height:84px; background:var(--accent); border-radius:10px; margin-bottom:12px;" },
+          el("span", { style:"font-size:15px; font-weight:900; color:#fff; letter-spacing:.08em;" }, "BLACK PACK"))
+      : el("div", { style:"height:84px; border-radius:10px; margin-bottom:12px; background:#F6F3EC center/cover no-repeat url('" + m.thumb + "');" });
+    $("[data-materials]").appendChild(el("div", { style:"background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:14px;" }, [
+      el("p", { style:"font-size:13px; font-weight:900; color:var(--ink); margin-bottom:10px;" }, m.label),
+      thumb,
+      el("a", { href:CONFIG.materialsUrl || "#", target:"_blank", rel:"noopener",
+        style:"display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:9px; background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:10px; text-decoration:none; font-size:12px; font-weight:900;" }, [
+        el("span", null, "選択する"),
+        el("i", { class:"ti ti-chevron-right", style:"font-size:14px;" }),
+      ]),
+    ]));
+  });
+  matRules.forEach(t => $("[data-matrules]").appendChild(el("div", { style:"display:flex; gap:9px; align-items:flex-start;" }, [
+    check("#1E9E4A"),
+    el("p", { style:"font-size:12.5px; font-weight:600; color:#4A4F5A; line-height:1.6;" }, t),
+  ])));
+
+  /* ===== NG注意事項・言い方 ===== */
+  okPhrases.forEach(t => $("[data-ok]").appendChild(el("div", { style:"font-size:12px; font-weight:700; color:#237A3E; background:#EAF7EE; border-radius:8px; padding:8px 10px; line-height:1.45;" }, "「" + t + "」")));
+  ngPhrases.forEach(t => $("[data-ngwords]").appendChild(el("div", { style:"font-size:11.5px; font-weight:600; color:#B02E46; background:var(--red-bg); border-radius:8px; padding:8px 10px; line-height:1.5;" }, t)));
+  ng.forEach(t => $("[data-ng]").appendChild(el("div", { style:"display:flex; gap:12px; align-items:flex-start; background:#fff; border:1.5px solid var(--red-bd); border-radius:13px; padding:13px 15px;" }, [
+    badge("!", "var(--red)", "#fff", 22),
+    el("p", { style:"font-size:13px; font-weight:500; color:#3E434E; line-height:1.6; padding-top:1px;" }, t),
+  ])));
+
+  /* ===== 差し替え値の反映 ===== */
+  document.querySelectorAll("[data-join]").forEach(a => { a.href = CONFIG.productUrl; });
+  document.querySelectorAll("[data-line]").forEach(a => { a.href = CONFIG.lineUrl; });
+  document.querySelectorAll("[data-mail]").forEach(a => { a.href = CONFIG.mailUrl; });
+})();
+</script>
+</body>
+</html>
