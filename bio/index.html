@@ -204,9 +204,18 @@
 
       <!-- 売れているサプリ動画の型 -->
       <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--navy-bd);">
-        <span style="display:inline-block; background:#2A3A66; color:#AFC4F2; font-size:11px; font-weight:900; letter-spacing:.04em; padding:4px 13px; border-radius:100px; margin-bottom:12px;">売れやすいサプリ動画の“型”</span>
-        <p style="font-size:11px; color:#8B96AD; line-height:1.7; margin-bottom:14px;">サプリは“飲んですぐ分かる変化”が撮れないので、<b style="color:#D6DDEA;">生活の中の続けやすさ</b>や<b style="color:#D6DDEA;">知って得する情報</b>で見せるのが定番です。得意なものを1つ選んでください。</p>
+        <span style="display:inline-block; background:#2A3A66; color:#AFC4F2; font-size:11px; font-weight:900; letter-spacing:.04em; padding:4px 13px; border-radius:100px; margin-bottom:12px;">売れているサプリ動画の“型”</span>
+        <div style="background:var(--navy2); border:1px solid var(--navy-bd); border-radius:12px; padding:13px 14px; margin-bottom:12px;">
+          <p style="font-size:12.5px; font-weight:900; color:#fff; line-height:1.6; margin-bottom:6px;">売れている動画は「効いている瞬間」ではなく、<span style="color:#E6C27A;">その前後</span>を映している</p>
+          <p style="font-size:11px; color:#C7CFDE; line-height:1.7;"><b style="color:#fff;">効く前</b>＝仕組み・数字・実物／<b style="color:#fff;">効いた後</b>＝行動の変化（毎朝の習慣になった など）。サプリは変化そのものが撮れないので、この“前後”で見せます。</p>
+        </div>
+        <p style="font-size:11px; color:#8B96AD; line-height:1.7; margin-bottom:12px;">3STEP BIOで使いやすい型です。得意なものを1つ選んでください。</p>
         <div data-types style="display:flex; flex-direction:column; gap:10px;"></div>
+        <div style="margin-top:12px; display:flex; gap:10px; align-items:flex-start; background:#2B1B20; border:1px solid #5A2E3A; border-radius:12px; padding:12px 13px;">
+          <span style="flex:none; width:20px; height:20px; border-radius:50%; background:var(--red); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:900; margin-top:1px;">!</span>
+          <p style="font-size:11.5px; color:#F2D9DE; line-height:1.65;"><b style="color:#fff;">伸びにくい傾向：</b>パッケージを映すだけの動画や、ルーティンVlogだけの動画は売上が小さめでした。図解・数字・実物で“仕組み”を見せるところまで入れましょう。</p>
+        </div>
+        <p style="font-size:10px; color:#6F7A93; line-height:1.6; margin-top:10px;">※直近の売れているサプリ動画の傾向をもとにした参考です。正解ではないので、自分のスタイルに合わせてアレンジしてください。</p>
       </div>
 
       <!-- フック例 -->
@@ -346,17 +355,17 @@
   const steps = [
     { no:"1", accent:"#E6C27A", time:"0〜2秒",   title:"フック", desc:"商品を見せつつ“あるある悩み”で止める" },
     { no:"2", accent:"#6E93E0", time:"2〜8秒",   title:"共感",   desc:"毎日ヨーグルトは無理／大きいサプリが苦手" },
-    { no:"3", accent:"#6E93E0", time:"8〜18秒",  title:"解決",   desc:"菌4種＋エサが1粒に／小粒／守って届ける" },
+    { no:"3", accent:"#6E93E0", time:"8〜18秒",  title:"仕組み",  desc:"図解・数字・実物で「エサ付き3STEP」「守って届ける」を見せる" },
     { no:"4", accent:"#EE7D1E", time:"18〜30秒", title:"CTA",    desc:"「まずは1日1粒から」と気軽さで締める" },
   ];
 
   // 売れやすいサプリ動画の型
   const types = [
-    { tag:"A", title:"朝ルーティン型", desc:"朝の支度や朝ごはんの流れで1粒飲む。生活感で“続けやすさ”を見せる" },
-    { tag:"B", title:"「知ってた？」解説型", desc:"「菌って光と胃酸に弱いって知ってた？」など雑学から入り、アルミ袋・カプセルを見せる" },
-    { tag:"C", title:"選び方解説型", desc:"「乳酸菌サプリ、数で選んでない？」→選ぶときのポイント→この商品、の順で紹介" },
-    { tag:"D", title:"手元アップ型", desc:"開封して粒を指でつまみ、小ささを見せる。他の大きめサプリと並べると伝わりやすい" },
-    { tag:"E", title:"正直レビュー型", desc:"「1ヶ月続けてみた正直な感想」。体の変化ではなく、飲みやすさ・続けやすさを本音で語る" },
+    { tag:"A", title:"図解×ペン型", desc:"紙1枚に「菌のリレー（3STEP）」をペンで書きながら説明。ポイントは“各STEPに菌のエサが付いている”こと" },
+    { tag:"B", title:"数字・比較型", desc:"「菌の数」で選ぶ vs 「菌の連携」で選ぶ、を並べて比較。約5兆個／1日1粒／ビタミンB1が1日分 などの数字を添える" },
+    { tag:"C", title:"実物で見せる型", desc:"アルミの袋やカプセルを手に取り、“菌を守る仕組み”を目で見せる。この商品で唯一“目に見える”部分（実験をする場合は事前に再現できるか確認）" },
+    { tag:"D", title:"サイズ比較型", desc:"粒を指先に乗せる、手持ちの大きめサプリと並べるなどで“小ささ”を見せる（他社名・パッケージは映さない）" },
+    { tag:"E", title:"熱量の語り型", desc:"「菌もエサも1粒にまとまってるのがラク」と自分の言葉で熱く語り、「毎朝1粒が習慣になった」など“行動の変化”で締める" },
   ];
 
   const hooks = [
@@ -367,6 +376,7 @@
 
   const checklist = [
     "最初の2秒で商品を出す（引っぱらない）",
+    "パッケージを映すだけで終わらせず、図解・数字・実物で“仕組み”を見せる",
     "1カット約2秒のテンポで／ナレーションありが◎",
     "「効く」ではなく「続けやすい」「エサもセット」「守って届ける」で語る",
     "1本に1回、素の一言・感想を入れてコメントを誘う",
@@ -385,7 +395,8 @@
     "口コミにある「お腹の調子が良くなった」「体重が落ちた」などの声を、紹介・引用しない",
     "「5兆個」「ほぼ100%カット」などの数値はメーカー表記どおりに。盛らない・言い換えない",
     "飲む前後の比較（ビフォーアフター）や体型・体調の変化を見せる演出はNG",
-    "他社・競合商品の名前を出した比較や誹謗中傷はNG",
+    "図解で、腸の不調や病気を連想させる描き方はしない（あくまで“菌とエサの組み合わせ”の説明に）",
+    "比較は「菌の数 vs 連携」「粒の大きさ」など一般的な内容まで。他社名・他社パッケージを出した比較や誹謗中傷はNG",
     "#PR 表記・アフィリエイトリンクの貼り忘れに注意",
   ];
 
